@@ -28,17 +28,17 @@ Stacked AutoEncoder는 여러 개의 오토인코더를 쌓아 올린 구조, Ba
 
 #### Adam Optimizer
 
-<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/c3037ba8-eba4-4f24-8909-9c1cdd5aca41" width="400" height="300">
-<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/873124f5-fe88-45e9-a457-20afcf9134fc" width="600" height="250">
+<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/c3037ba8-eba4-4f24-8909-9c1cdd5aca41" width="400" height="300">  
+<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/873124f5-fe88-45e9-a457-20afcf9134fc" width="600" height="250">  
 Test Loss : 0.0010
-
-
 
 #### SGD Optimizer
 
-<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/61876b64-539b-4d73-9d03-5e0f2295fb10" width="400" height="300">
-<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/1fdcf1ee-3e25-4daa-96af-142fd717cfd6" width="600" height="250">
+<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/61876b64-539b-4d73-9d03-5e0f2295fb10" width="400" height="300">  
+<img src="https://github.com/cku7808/Stacked-denoising-AE/assets/66200628/1fdcf1ee-3e25-4daa-96af-142fd717cfd6" width="600" height="250">  
 Test Loss : 0.0026  
-  
-Adam과 SGD 모두 Loss가 Epoch이 증가함에 따라 잘 감소하는 모습을 보이며 원본 복원 결과 또한 원본과 매우 유사하게 잘 복원한 모습입니다.
-그 중에서도 Test Loss가 0.001로 더 작은 것으로 볼 때 Adam Optimizer를 사용해 학습했을 때의 결과가 더 좋음을 알 수 있었습니다.
+
+
+   
+Adam과 SGD 모두 Loss가 Epoch이 증가함에 따라 잘 감소하는 모습을 보이며 원본 복원 결과 또한 원본과 매우 유사하게 잘 복원한 모습입니다.  
+그 중에서도 Test Loss가 0.001로 더 작은 것으로 볼 때 Adam Optimizer를 사용해 학습했을 때의 결과가 더 좋음을 알 수 있었습니다.  
