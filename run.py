@@ -44,20 +44,17 @@ for epoch in range(epochs):
 
 # test starts
 model.eval()
+test_loss = 0
 for i, data in enumerate(test_loader):
-    if i < 5:
-        x, _ = data
-        x = x.to(device)  # GPU로 이동
+    x, _ = data
+    x = x.to(device)  # GPU로 이동
 
-        out_x = model(x).cpu().detach()  # 모델 결과를 CPU로 옮기기
+    noise = torch.randn_like(x) * 0.1  # x의 형상을 하는 평균0, 표준편차1인 정규분포에 0.1을 곱해 표준편차를 0.1로 만들기
+    noise = noise.to(torch.float).to(device)
+    noised_x = x + noise
+    noised_x = torch.clamp(noised_x, 0, 1).to(torch.float).to(device)
 
-        fig = plt.figure()
-        rows = 1
-        cols = 2
-        ax1 = fig.add_subplot(rows, cols, 1)
-        ax1.imshow(x.cpu().numpy().squeeze(), cmap="gray")  # 이미지를 CPU로 옮기기
-
-        ax2 = fig.add_subplot(rows, cols, 2)
-        ax2.imshow(out_x.numpy().squeeze(), cmap="gray")  # 이미지를 CPU로 옮기기
-
-        plt.show()
+    out_x = model(noised_x)  # 모델 결과를 CPU로 옮기기
+    test_loss += criterion(x,out_x)
+    test_loss = test_loss/len(test_loader)
+print("Test Loss :",test_loss)
